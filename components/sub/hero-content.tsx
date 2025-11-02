@@ -33,7 +33,7 @@ export const HeroContent = () => {
           className="flex flex-col gap-6 mt-0 text-7xl text-bold text-white max-w-[600px] w-auto h-auto"
         >
           <span>
-             Hi, I'm <br/> {" "}
+             Hi, I&apos;m <br/> {" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
                Alok Kumar
             </span>{" "}
