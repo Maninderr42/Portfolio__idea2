@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Send, Mail, Phone, MapPin, Linkedin, Github, Twitter, Instagram, Sparkles } from 'lucide-react';
 import { useState } from 'react';
 
@@ -17,36 +17,9 @@ export function ContactForm() {
   const [focusedField, setFocusedField] = useState<string | null>(null);
   const [isFormHovered, setIsFormHovered] = useState(false);
 
-  // Mouse position tracking for 3D tilt effect on form
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-  
-  // Smooth spring animations
-  const mouseXSpring = useSpring(x, { stiffness: 300, damping: 30 });
-  const mouseYSpring = useSpring(y, { stiffness: 300, damping: 30 });
-  
-  // Transform mouse position to rotation values
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], [5, -5]);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], [-5, 5]);
-  
-  // Handle mouse move for 3D effect
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const width = rect.width;
-    const height = rect.height;
-    const mouseX = e.clientX - rect.left;
-    const mouseY = e.clientY - rect.top;
-    const xPct = mouseX / width - 0.5;
-    const yPct = mouseY / height - 0.5;
-    x.set(xPct);
-    y.set(yPct);
-  };
-  
-  const handleMouseLeave = () => {
-    setIsFormHovered(false);
-    x.set(0);
-    y.set(0);
-  };
+  // Tilt disabled for reliability across devices
+  const handleMouseMove = () => {};
+  const handleMouseLeave = () => { setIsFormHovered(false); };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -68,7 +41,7 @@ export function ContactForm() {
       
       {/* Animated gradient orbs */}
       <motion.div
-        className="absolute top-20 -left-40 w-96 h-96 bg-purple-600/30 rounded-full blur-3xl"
+        className="absolute top-20 -left-40 w-96 h-96 bg-purple-600/30 rounded-full blur-3xl pointer-events-none"
         animate={{
           x: [0, 50, 0],
           y: [0, 30, 0],
@@ -81,7 +54,7 @@ export function ContactForm() {
         }}
       />
       <motion.div
-        className="absolute bottom-20 -right-40 w-96 h-96 bg-blue-600/30 rounded-full blur-3xl"
+        className="absolute bottom-20 -right-40 w-96 h-96 bg-blue-600/30 rounded-full blur-3xl pointer-events-none"
         animate={{
           x: [0, -50, 0],
           y: [0, -30, 0],
@@ -95,14 +68,14 @@ export function ContactForm() {
       />
       
       <motion.div
-        className="absolute top-1/2 left-1/2 w-96 h-96 bg-pink-600/20 rounded-full blur-3xl"
+        className="absolute top-1/2 left-1/2 w-96 h-96 bg-pink-600/20 rounded-full blur-3xl pointer-events-none"
         animate={{
-          x: [0, 30, 0],
-          y: [0, -40, 0],
-          scale: [1, 1.15, 1],
+          x: [0, 20, 0],
+          y: [0, -30, 0],
+          scale: [1, 1.1, 1],
         }}
         transition={{
-          duration: 12,
+          duration: 16,
           repeat: Infinity,
           ease: "easeInOut",
         }}
@@ -159,7 +132,7 @@ export function ContactForm() {
       {[...Array(6)].map((_, i) => (
         <motion.div
           key={i}
-          className="absolute w-32 h-32 border border-purple-500/20 rounded-full"
+          className="absolute w-32 h-32 border border-purple-500/20 rounded-full pointer-events-none"
           style={{
             top: `${15 + i * 14}%`,
             right: `${5 + i * 3}%`,
@@ -170,7 +143,7 @@ export function ContactForm() {
             rotate: [0, 180, 360],
           }}
           transition={{
-            duration: 10 + i * 2,
+            duration: 14 + i * 2,
             repeat: Infinity,
             ease: "linear",
           }}
@@ -259,8 +232,8 @@ export function ContactForm() {
                 </motion.div>
                 <div className="relative z-10">
                   <h3 className="text-white text-lg mb-1">Address</h3>
-                  <p className="text-gray-400">London</p>
-                  <p className="text-gray-500 text-sm">25 Wilton Road, Victoria, London, SW1V 1LW</p>
+                  <p className="text-gray-400">Punjab</p>
+                  <p className="text-gray-500 text-sm">Ludhiana Punjab, India</p>
                 </div>
               </motion.div>
 
@@ -287,8 +260,8 @@ export function ContactForm() {
                 <div className="relative z-10">
                   <h3 className="text-white text-lg mb-1">Phone</h3>
                   <p className="text-gray-400">Mon-Fri from 10am to 6pm</p>
-                  <a href="tel:+447551450400" className="text-purple-400 hover:text-purple-300 transition-colors">
-                    +44 7551 450 400
+                  <a href="tel:+918591066565" className="text-purple-400 hover:text-purple-300 transition-colors">
+                    +91 8591066565
                   </a>
                 </div>
               </motion.div>
@@ -315,9 +288,9 @@ export function ContactForm() {
                 </motion.div>
                 <div className="relative z-10">
                   <h3 className="text-white text-lg mb-1">Mail</h3>
-                  <p className="text-gray-400 mb-1">Our friendly team is here to help</p>
+                  <p className="text-gray-400 mb-1">I am always here to help</p>
                   <a href="mailto:hello@jabersaid.com" className="text-purple-400 hover:text-purple-300 transition-colors">
-                    hello@jabersaid.com
+                   alok06961@gmail.com
                   </a>
                 </div>
               </motion.div>
@@ -330,13 +303,13 @@ export function ContactForm() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.8 }}
               >
-                <h3 className="text-white text-lg mb-4">Follow Us</h3>
+                <h3 className="text-white text-lg mb-4">Follow On</h3>
                 <div className="flex gap-3">
                   {[
-                    { Icon: Linkedin, href: '#', delay: 0 },
-                    { Icon: Github, href: '#', delay: 0.1 },
-                    { Icon: Twitter, href: '#', delay: 0.2 },
-                    { Icon: Instagram, href: '#', delay: 0.3 },
+                    { Icon: Linkedin, href: 'https://www.linkedin.com/in/alok-kumar-a84b061a9', delay: 0 },
+                    { Icon: Github, href: 'https://github.com/Alok290', delay: 0.1 },
+                    { Icon: Twitter, href: 'https://twitter.com/AlokKumar290', delay: 0.2 },
+                    { Icon: Instagram, href: 'https://www.instagram.com/alokkumar290/', delay: 0.3 },
                   ].map(({ Icon, href, delay }, index) => (
                     <motion.a
                       key={index}
@@ -385,22 +358,15 @@ export function ContactForm() {
             onMouseMove={handleMouseMove}
             onMouseEnter={() => setIsFormHovered(true)}
             onMouseLeave={handleMouseLeave}
-            style={{
-              perspective: 1000,
-            }}
+            style={{}}
           >
             <motion.div
-              className="relative p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10"
-              style={{
-                rotateX,
-                rotateY,
-                transformStyle: 'preserve-3d',
-                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
-              }}
+              className="relative z-50 p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 pointer-events-auto"
+              style={{ boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)' }}
             >
               {/* Form outer glow effect */}
               <motion.div
-                className="absolute -inset-1 bg-gradient-to-r from-purple-600/30 via-pink-600/30 to-blue-600/30 rounded-2xl blur-xl"
+                className="absolute -inset-1 bg-gradient-to-r from-purple-600/30 via-pink-600/30 to-blue-600/30 rounded-2xl blur-xl pointer-events-none"
                 animate={{
                   opacity: isFormHovered ? 0.8 : 0.3,
                 }}
@@ -409,7 +375,7 @@ export function ContactForm() {
 
               {/* Shimmer effect */}
               <motion.div
-                className="absolute inset-0 pointer-events-none z-20 rounded-2xl overflow-hidden"
+                className="absolute inset-0 pointer-events-none z-10 rounded-2xl overflow-hidden"
                 style={{
                   background: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent)',
                 }}
@@ -417,7 +383,7 @@ export function ContactForm() {
                   x: isFormHovered ? ['-100%', '100%'] : '-100%',
                 }}
                 transition={{
-                  duration: 1.5,
+                  duration: 2.2,
                   ease: 'easeInOut',
                   repeat: isFormHovered ? Infinity : 0,
                   repeatDelay: 0.5,
@@ -430,7 +396,7 @@ export function ContactForm() {
                   {[...Array(12)].map((_, i) => (
                     <motion.div
                       key={i}
-                      className="absolute w-1 h-1 bg-purple-400 rounded-full"
+                      className="absolute w-1 h-1 bg-purple-400 rounded-full pointer-events-none"
                       style={{
                         left: `${10 + (i % 4) * 25}%`,
                         top: `${20 + Math.floor(i / 4) * 30}%`,
@@ -455,7 +421,7 @@ export function ContactForm() {
 
               {/* Corner accents */}
               <motion.div
-                className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-purple-500/40 via-pink-500/30 to-transparent rounded-2xl"
+                className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-purple-500/40 via-pink-500/30 to-transparent rounded-2xl pointer-events-none"
                 style={{
                   transformStyle: 'preserve-3d',
                   transform: 'translateZ(20px)',
@@ -492,7 +458,7 @@ export function ContactForm() {
                       onChange={handleChange}
                       onFocus={() => setFocusedField('firstName')}
                       onBlur={() => setFocusedField(null)}
-                      className="w-full px-4 py-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-purple-500/50 focus:bg-white/10 transition-all duration-300"
+                      className="w-full px-4 py-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-purple-500/50 focus:bg-white/10 transition-all duration-300 pointer-events-auto"
                       whileFocus={{ scale: 1.02 }}
                     />
                   </motion.div>
@@ -514,7 +480,7 @@ export function ContactForm() {
                       onChange={handleChange}
                       onFocus={() => setFocusedField('lastName')}
                       onBlur={() => setFocusedField(null)}
-                      className="w-full px-4 py-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-purple-500/50 focus:bg-white/10 transition-all duration-300"
+                      className="w-full px-4 py-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-purple-500/50 focus:bg-white/10 transition-all duration-300 pointer-events-auto"
                       whileFocus={{ scale: 1.02 }}
                     />
                   </motion.div>
@@ -538,7 +504,7 @@ export function ContactForm() {
                     onChange={handleChange}
                     onFocus={() => setFocusedField('company')}
                     onBlur={() => setFocusedField(null)}
-                    className="w-full px-4 py-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-purple-500/50 focus:bg-white/10 transition-all duration-300"
+                    className="w-full px-4 py-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-purple-500/50 focus:bg-white/10 transition-all duration-300 pointer-events-auto"
                     whileFocus={{ scale: 1.02 }}
                   />
                 </motion.div>
@@ -561,7 +527,7 @@ export function ContactForm() {
                     onChange={handleChange}
                     onFocus={() => setFocusedField('email')}
                     onBlur={() => setFocusedField(null)}
-                    className="w-full px-4 py-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-purple-500/50 focus:bg-white/10 transition-all duration-300"
+                    className="w-full px-4 py-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-purple-500/50 focus:bg-white/10 transition-all duration-300 pointer-events-auto"
                     whileFocus={{ scale: 1.02 }}
                   />
                 </motion.div>
@@ -584,7 +550,7 @@ export function ContactForm() {
                     onChange={handleChange}
                     onFocus={() => setFocusedField('phone')}
                     onBlur={() => setFocusedField(null)}
-                    className="w-full px-4 py-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-purple-500/50 focus:bg-white/10 transition-all duration-300"
+                    className="w-full px-4 py-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-purple-500/50 focus:bg-white/10 transition-all duration-300 pointer-events-auto"
                     whileFocus={{ scale: 1.02 }}
                   />
                 </motion.div>
@@ -607,7 +573,7 @@ export function ContactForm() {
                     onFocus={() => setFocusedField('message')}
                     onBlur={() => setFocusedField(null)}
                     rows={5}
-                    className="w-full px-4 py-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-purple-500/50 focus:bg-white/10 transition-all duration-300 resize-none"
+                    className="w-full px-4 py-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-purple-500/50 focus:bg-white/10 transition-all duration-300 resize-none pointer-events-auto"
                     whileFocus={{ scale: 1.02 }}
                   />
                 </motion.div>

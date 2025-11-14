@@ -12,6 +12,7 @@ import {
 export const SkillText = () => {
   return (
     <div className="w-full h-auto flex flex-col items-center justify-center">
+<<<<<<< HEAD
       <motion.div
         variants={slideInFromTop}
         className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9]"
@@ -21,6 +22,9 @@ export const SkillText = () => {
           Think better with Next.js 14
         </h1>
       </motion.div>
+=======
+      {/* Removed Next.js 14 badge as requested */}
+>>>>>>> 7ead908 (data added)
 
       <motion.div
         variants={slideInFromLeft(0.5)}

@@ -79,19 +79,19 @@ export const SKILL_DATA = [
 
 export const SOCIALS = [
   {
+    name: "GitHub",
+    icon: RxGithubLogo,
+    link: "https://github.com/Alok290",
+  },
+  {
+    name: "LinkedIn",
+    icon: RxLinkedinLogo,
+    link: "https://www.linkedin.com/in/alok-kumar-a84b061a9",
+  },
+  {
     name: "Instagram",
     icon: RxInstagramLogo,
-    link: "https://instagram.com",
-  },
-  {
-    name: "Facebook",
-    icon: FaFacebook,
-    link: "https://facebook.com",
-  },
-  {
-    name: "Twitter",
-    icon: RxTwitterLogo,
-    link: "https://twitter.com",
+    link: "https://www.instagram.com/alok_kumar_290?igsh=MXduNGh2NXdpNzgzYw==",
   },
 ] as const;
 
@@ -233,46 +233,32 @@ export const OTHER_SKILL = [
 
 export const PROJECTS = [
   {
-    title: "Modern Next.js 14 Portfolio",
+    title: "TripBuddy - Travel Microservices Platform",
     description:
-      'Embark on a journey through my professional evolution with the "Modern Next.js Portfolio" - a dynamic showcase of my skills, experiences, and passion for web development. Crafted with precision and powered by Next.js, this portfolio is more than just a static display; it\'s an immersive experience that reflects the cutting edge of modern web technologies.',
+      'Full-fledged trip platform with microservices. Create and manage trips, collaborate and share itineraries, book experiences, and handle payments. Includes user auth, notifications, and admin tools.',
     image: "/projects/project-1.png",
-    link: "https://example.com",
+    link: "https://github.com/Alok290",
   },
   {
-    title: "Interactive Cards Portfolio",
+    title: "Renting Flats - Property Rental App",
     description:
-      'Step into the extraordinary world of my professional journey through the "Interactive Cards Portfolio" - an innovative and visually captivating platform that redefines the traditional portfolio experience. Ditching the conventional static layout, this portfolio leverages interactive cards to showcase my skills, projects, and personality in an engaging and dynamic manner.',
+      'End-to-end rental platform to list, search, and book flats. Features availability calendars, filters, secure bookings, landlord dashboard, and messaging between owners and tenants.',
     image: "/projects/project-2.png",
-    link: "https://example.com",
+    link: "https://github.com/Alok290",
   },
   {
-    title: "Space Themed Website",
+    title: "Employee Management System",
     description:
-      'Embark on an interstellar journey with my "Space Themed Website", a mesmerizing space-themed website that invites you to explore the cosmic wonders beyond our world. Immerse yourself in an awe-inspiring digital experience that blends cutting-edge design with the mysteries of the universe.',
+      'Enterprise EMS with employee profiles, roles & permissions, attendance, payroll-ready exports, analytics, and expiry/renewal tracking for IDs and documents.',
     image: "/projects/project-3.png",
-    link: "https://example.com",
+    link: "https://github.com/Alok290",
   },
   {
-    title: "E-Commerce Platform",
+    title: "BookMyShow Replica",
     description:
-      'A full-featured e-commerce platform built with modern web technologies. Features include user authentication, shopping cart, payment integration, and admin dashboard. Designed with scalability and performance in mind, this platform delivers a seamless shopping experience.',
+      'Ticketing clone with events catalog, seat selection, showtimes, cart/checkout, bookings history, and organizer tools. Focus on scalability and smooth UX.',
     image: "/projects/project-1.png",
-    link: "https://example.com",
-  },
-  {
-    title: "Social Media Dashboard",
-    description:
-      'An intuitive social media management dashboard that helps businesses manage their online presence. Features real-time analytics, content scheduling, and engagement tracking. Built with React and powered by a robust backend API.',
-    image: "/projects/project-2.png",
-    link: "https://example.com",
-  },
-  {
-    title: "Task Management App",
-    description:
-      'A collaborative task management application that helps teams stay organized and productive. Features include real-time updates, team collaboration, file attachments, and advanced filtering options. Built with a focus on user experience and performance.',
-    image: "/projects/project-3.png",
-    link: "https://example.com",
+    link: "https://github.com/Alok290",
   },
 ] as const;
 

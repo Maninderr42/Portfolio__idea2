@@ -14,22 +14,34 @@ interface Testimonial {
 export default function Testimonials() {
   const testimonials: Testimonial[] = [
     {
-      quote: "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-      name: "Sara Lee",
-      title: "CFO of Acme Co",
-      image: "https://images.unsplash.com/photo-1581065178047-8ee15951ede6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB3b21hbiUyMHBvcnRyYWl0fGVufDF8fHx8MTc2MTIyNjEzMXww&ixlib=rb-4.1.0&q=80&w=1080"
+      quote: "Alok built our expiry management system for the medical store with a clean dashboard, accurate expiration tracking, and helpful alerts. The workflow is smooth, reporting is clear, and it’s saved us hours every week.",
+      name: "Maininder Deep Singh",
+      title: "Client",
+      image: "https://placehold.co/48x48/png"
     },
     {
-      quote: "I've never met a web developer who truly cares about their clients' success like Rick does.",
-      name: "Chris Brown",
-      title: "COO of DEF Corp",
-      image: "https://images.unsplash.com/photo-1672685667592-0392f458f46f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBtYW4lMjBwb3J0cmFpdHxlbnwxfHx8fDE3NjEyMDk5MjR8MA&ixlib=rb-4.1.0&q=80&w=1080"
+      quote: "We needed a project showcase website where clients could explore our work easily. Alok delivered a polished UI/UX, smooth navigation, and clear CTAs that helped us connect with customers effortlessly.",
+      name: "Muninshwer Jain",
+      title: "Client",
+      image: "https://placehold.co/48x48/png"
     },
     {
-      quote: "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-      name: "Lisa Wang",
-      title: "CTO of 456 Enterprises",
-      image: "https://images.unsplash.com/photo-1665224751641-8ea911ca2267?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMHdvbWFuJTIwYXNpYW58ZW58MXx8fHwxNzYxMjQ0NTY1fDA&ixlib=rb-4.1.0&q=80&w=1080"
+      quote: "Alok delivered our e-commerce site with product catalog, cart, secure checkout, and order tracking. Performance scores jumped and the admin panel made inventory updates painless.",
+      name: "Dishant Gupta",
+      title: "Client",
+      image: "https://placehold.co/48x48/png"
+    },
+    {
+      quote: "We also got internal tools (employee portal with role-based access, analytics, and automated reports). It streamlined our workflows and cut manual effort considerably.",
+      name: "Alok",
+      title: "Client",
+      image: "https://placehold.co/48x48/png"
+    },
+    {
+      quote: "He also shipped a portfolio/landing site with a simple CMS for blogs, strong SEO, and fast load times. It helped us present our brand better and convert more leads.",
+      name: "Alok",
+      title: "Client",
+      image: "https://placehold.co/48x48/png"
     }
   ];
 
