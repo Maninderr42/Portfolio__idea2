@@ -51,6 +51,14 @@ export const HeroContent = () => {
 
         <motion.a
           variants={slideInFromLeft(1)}
+          href="#work-experience"
+          onClick={(e) => {
+            e.preventDefault();
+            const el = document.querySelector('#work-experience');
+            if (el) {
+              el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }}
           className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
         >
           Learn more
