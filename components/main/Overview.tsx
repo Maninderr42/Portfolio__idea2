@@ -29,12 +29,12 @@ export default function Overview() {
           Overview.
         </h1>
         <p className="text-gray-400 max-w-3xl mb-16 leading-relaxed">
-        I'm a full-stack software engineer specializing in Java, Spring Boot, and React,
+        I&apos;m a full-stack software engineer specializing in Java, Spring Boot, and React,
         with hands-on experience building scalable, secure, and production-ready applications.
-        I've contributed to real-world features used by 500+ users, optimized backend
+        I&apos;ve contributed to real-world features used by 500+ users, optimized backend
         performance, and solved 1000+ DSA problems to strengthen my problem-solving skills.
         I enjoy turning complex requirements into clean, efficient systems and working closely
-        with teams to deliver meaningful user and business impact. Let's build something great together!
+        with teams to deliver meaningful user and business impact. Let&apos;s build something great together!
       </p>
 
 
